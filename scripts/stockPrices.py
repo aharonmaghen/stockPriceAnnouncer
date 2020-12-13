@@ -1,17 +1,15 @@
 import requests
 import json
 
-url = "https://api.twelvedata.com/time_series"
-symbol = input("Enter a stock ticker: ")
+url = "https://api.twelvedata.com/price"
+symbol = None
 params = {
 	"symbol": symbol,
 	"apikey": "374a650abc0542cdaa7a306a5f12199b",
-	"interval": "1min",
-	"outputsize": "1"
 }
 
-stock = requests.get(url, params)
-
-price = json.loads(stock.text)['values'][0]['close']
-
-print(price)
+def getStockPrice(ticker):
+	params["symbol"] = ticker
+	stock = requests.get(url, params)
+	print(json.loads(stock.text))
+	return "{:.2f}".format(float(json.loads(stock.text)['price']))
