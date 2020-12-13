@@ -11,5 +11,4 @@ params = {
 def getStockPrice(ticker):
 	params["symbol"] = ticker
 	stock = requests.get(url, params)
-	print(json.loads(stock.text))
 	return "{:.2f}".format(float(json.loads(stock.text)['price']))
