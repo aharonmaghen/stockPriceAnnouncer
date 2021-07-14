@@ -4,7 +4,7 @@ Stock Price Announcer is a Python script that will announce live stock prices fo
 
 ### Installation
 
-SPA requires the following packages installed in order for it work.
+SPA requires the following packages installed in order for it to work.
 
  - Text-to-Speech -> [pyttsx3](https://pypi.org/project/pyttsx3/)
  - HTTP Requests -> [requests](https://requests.readthedocs.io/en/master/user/install/#install)
